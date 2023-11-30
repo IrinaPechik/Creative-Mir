@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Creative-Mir
 //
-//  Created by Печик Дарья on 30.11.2023.
+//  Created by Печик Ирина on 30.11.2023.
 //
 
 import UIKit
