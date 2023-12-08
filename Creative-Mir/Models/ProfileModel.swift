@@ -9,11 +9,11 @@ import Foundation
 import UIKit
 
 public struct ProfileModel {
-    let avatar: UIImage?
+    let avatar: String?
     let firstName: String
     let secondName: String
     
-    public init(avatar: UIImage? = nil, firstName: String = "", secondName: String = "") {
+    public init(avatar: String? = nil, firstName: String = "", secondName: String = "") {
         self.avatar = avatar
         self.firstName = firstName
         self.secondName = secondName

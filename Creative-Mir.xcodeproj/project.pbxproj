@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61203F0B2B2337DC00CC6241 /* CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 61203F092B2337DC00CC6241 /* CoreData.xcdatamodeld */; };
+		61203F0D2B233B3E00CC6241 /* UIImage+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61203F0C2B233B3E00CC6241 /* UIImage+String.swift */; };
+		61203F112B233DFA00CC6241 /* Profile+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61203F0F2B233DFA00CC6241 /* Profile+CoreDataProperties.swift */; };
+		61203F132B23409200CC6241 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61203F122B23409200CC6241 /* CoreDataManager.swift */; };
 		6174272C2B188B6900379702 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6174272B2B188B6900379702 /* AppDelegate.swift */; };
 		6174272E2B188B6900379702 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6174272D2B188B6900379702 /* SceneDelegate.swift */; };
 		617427302B188B6900379702 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6174272F2B188B6900379702 /* ViewController.swift */; };
@@ -20,6 +24,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		61203F0A2B2337DC00CC6241 /* CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreData.xcdatamodel; sourceTree = "<group>"; };
+		61203F0C2B233B3E00CC6241 /* UIImage+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+String.swift"; sourceTree = "<group>"; };
+		61203F0F2B233DFA00CC6241 /* Profile+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		61203F122B23409200CC6241 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		617427282B188B6900379702 /* Creative-Mir.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Creative-Mir.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6174272B2B188B6900379702 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6174272D2B188B6900379702 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		61203F142B23736600CC6241 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				61203F122B23409200CC6241 /* CoreDataManager.swift */,
+				61203F092B2337DC00CC6241 /* CoreData.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		6174271F2B188B6900379702 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +81,7 @@
 		6174272A2B188B6900379702 /* Creative-Mir */ = {
 			isa = PBXGroup;
 			children = (
+				61203F142B23736600CC6241 /* CoreData */,
 				617427482B18A38800379702 /* Functions */,
 				617427452B189F0300379702 /* Controllers */,
 				617427422B189E3800379702 /* Models */,
@@ -89,6 +107,7 @@
 		617427422B189E3800379702 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				61203F0F2B233DFA00CC6241 /* Profile+CoreDataProperties.swift */,
 				617427432B189E5200379702 /* ProfileModel.swift */,
 			);
 			path = Models;
@@ -107,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				617427492B18A3B600379702 /* Pin.swift */,
+				61203F0C2B233B3E00CC6241 /* UIImage+String.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -183,11 +203,15 @@
 			files = (
 				6174274A2B18A3B600379702 /* Pin.swift in Sources */,
 				617427472B189F2A00379702 /* ProfileViewController.swift in Sources */,
+				61203F0B2B2337DC00CC6241 /* CoreData.xcdatamodeld in Sources */,
 				617427442B189E5200379702 /* ProfileModel.swift in Sources */,
 				617427412B189E1D00379702 /* ProfileView.swift in Sources */,
 				617427302B188B6900379702 /* ViewController.swift in Sources */,
+				61203F132B23409200CC6241 /* CoreDataManager.swift in Sources */,
 				6174272C2B188B6900379702 /* AppDelegate.swift in Sources */,
 				6174272E2B188B6900379702 /* SceneDelegate.swift in Sources */,
+				61203F0D2B233B3E00CC6241 /* UIImage+String.swift in Sources */,
+				61203F112B233DFA00CC6241 /* Profile+CoreDataProperties.swift in Sources */,
 				6174274C2B18B76700379702 /* ImagePickerManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,6 +423,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		61203F092B2337DC00CC6241 /* CoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				61203F0A2B2337DC00CC6241 /* CoreData.xcdatamodel */,
+			);
+			currentVersion = 61203F0A2B2337DC00CC6241 /* CoreData.xcdatamodel */;
+			path = CoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 617427202B188B6900379702 /* Project object */;
 }

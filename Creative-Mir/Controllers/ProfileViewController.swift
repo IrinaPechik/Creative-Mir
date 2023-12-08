@@ -14,6 +14,7 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        CoreDataManager.shared.fetchProfiles()
         view.backgroundColor = .white
         configureUI()
     }
@@ -41,7 +42,8 @@ class ProfileViewController: UIViewController {
     }
     
     private func saveProfile() {
-        let newProfile = ProfileModel(avatar: profileView.avatarImage.image, firstName: profileView.firstNameField.text ?? "", secondName: profileView.secondNameField.text ?? "")
+        CoreDataManager.shared.createProfile(1, firstName: profileView.firstNameField.text, secondName: profileView.secondNameField.text, avatar: profileView.avatarImage.image?.toPngString())
+//        let newProfile = ProfileModel(avatar: profileView.avatarImage.image?.toPngString(), firstName: profileView.firstNameField.text ?? "", secondName: profileView.secondNameField.text ?? "")
         // Save
     }
 }
