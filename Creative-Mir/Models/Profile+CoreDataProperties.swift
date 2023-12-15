@@ -19,11 +19,13 @@ extension Profile {
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Profile> {
         return NSFetchRequest<Profile>(entityName: "Profile")
     }
-
-    @NSManaged public var id: Int64
+    @NSManaged public var email: String?
+    @NSManaged public var password: String
     @NSManaged public var firstName: String?
     @NSManaged public var secondName: String?
     @NSManaged public var avatarImage: String?
+    @NSManaged public var age: Int64
+    @NSManaged public var cityName: String?
 
 }
 

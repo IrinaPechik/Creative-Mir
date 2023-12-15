@@ -21,16 +21,19 @@ public final class CoreDataManager: NSObject {
         appDelegate.persistentContainer.viewContext
     }
 
-    public func createProfile(_ id: Int64, firstName: String?, secondName: String?, avatar: String?) {
+    public func createProfile(firstName: String, secondName: String, avatar: String?, email: String, password: String, age: Int64, cityName: String) {
         guard let profileDescription = NSEntityDescription.entity(forEntityName: "Profile", in: context) else {
             return
         }
         let profile = Profile(entity: profileDescription, insertInto: context)
         
-        profile.id = id
         profile.firstName = firstName
         profile.secondName = secondName
         profile.avatarImage = avatar
+        profile.email = email
+        profile.password = password
+        profile.age = age
+        profile.cityName = cityName
         
         appDelegate.saveContext()
     }
@@ -42,37 +45,47 @@ public final class CoreDataManager: NSObject {
         }
     }
     
-    public func fetchProfile(with id: Int64) -> Profile? {
+//    public func fetchProfile(with id: Int64) -> Profile? {
+//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Profile")
+//        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+//        do {
+//            let profiles = try? context.fetch(fetchRequest) as? [Profile]
+//            return profiles?.first
+//        }
+//    }
+    
+    public func fetchProfile(with email: String) -> Profile? {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Profile")
-        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+        fetchRequest.predicate = NSPredicate(format: "email == %@", email)
         do {
             let profiles = try? context.fetch(fetchRequest) as? [Profile]
             return profiles?.first
         }
     }
-    
-    public func updateProfile(with id: Int64, firstName: String?, secondName: String?, avatar: String?) {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Profile")
-        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
-        do {
-            guard let profiles = try? context.fetch(fetchRequest) as? [Profile],
-                  let profile = profiles.first else {return}
-            profile.firstName = firstName
-            profile.secondName = secondName
-            profile.avatarImage = avatar
-        }
-        
-        appDelegate.saveContext()
-    }
-    
-    public func deleteProfile(with id: Int64) {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Profile")
-        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
-        do {
-            guard let profiles = try? context.fetch(fetchRequest) as? [Profile],
-            let profile = profiles.first else {return}
-            context.delete(profile)
-        }
-        appDelegate.saveContext()
-    }
+//
+//    public func updateProfile(with id: Int64, firstName: String?, secondName: String?, avatar: String?) {
+//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Profile")
+//        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+//        do {
+//            guard let profiles = try? context.fetch(fetchRequest) as? [Profile],
+//                  let profile = profiles.first else {return}
+//            profile.firstName = firstName
+//            profile.secondName = secondName
+//            profile.avatarImage = avatar
+//        }
+//        
+//        appDelegate.saveContext()
+//    }
+//    
+//    public func deleteProfile(with id: Int64) {
+//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Profile")
+//        print(id)
+//        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+//        do {
+//            guard let profiles = try? context.fetch(fetchRequest) as? [Profile],
+//            let profile = profiles.first else {return}
+//            context.delete(profile)
+//        }
+//        appDelegate.saveContext()
+//    }
 }

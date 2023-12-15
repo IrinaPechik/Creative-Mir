@@ -10,12 +10,21 @@ import UIKit
 
 public struct ProfileModel {
     let avatar: String?
+    let email: String
     let firstName: String
     let secondName: String
+    let password: String
+    let age: Int
+    let cityName: String
     
-    public init(avatar: String? = nil, firstName: String = "", secondName: String = "") {
+    public init(avatar: String? = nil, email: String, firstName: String, secondName: String, password: String,
+                age: Int, cityName: String) {
         self.avatar = avatar
+        self.email = email
         self.firstName = firstName
         self.secondName = secondName
+        self.password = password
+        self.age = age
+        self.cityName = cityName
     }
 }
