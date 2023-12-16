@@ -21,7 +21,6 @@ class InformationInputController: UIViewController {
         // Для того, чтобы убрать клавиатуру при нажатии на любое место экрана
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapGesture))
         view.addGestureRecognizer(tapGesture)
-//        CoreDataManager.shared.fetchProfiles()
         registerForKeyBoardNotifications()
         configureUI()
 

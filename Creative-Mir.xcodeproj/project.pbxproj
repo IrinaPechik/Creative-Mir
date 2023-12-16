@@ -111,9 +111,7 @@
 		6174273F2B189DAB00379702 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				617427402B189E1D00379702 /* InformationInputView.swift */,
-				61D2CE6F2B2A3B5B00559361 /* RegistrationPageView.swift */,
-				613DE6922B2CC05900872B3D /* AutorizationView.swift */,
+				61E76F052B2E09A500FD399D /* Autorization&Registration */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -130,9 +128,7 @@
 		617427452B189F0300379702 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				617427462B189F2A00379702 /* InformationInputController.swift */,
-				61D2CE6D2B2A3B3800559361 /* RegistrationPageViewController.swift */,
-				613DE6902B2CBF6300872B3D /* AutorizationPageViewController.swift */,
+				61E76F042B2E097700FD399D /* Autoriaztion&Registation */,
 				6174274B2B18B76700379702 /* ImagePickerManager.swift */,
 				617544902B286E8200203E7C /* MainPageViewController.swift */,
 			);
@@ -147,6 +143,26 @@
 				61D2CE6B2B2A3A5F00559361 /* ProfileViewFunctions.swift */,
 			);
 			path = Functions;
+			sourceTree = "<group>";
+		};
+		61E76F042B2E097700FD399D /* Autoriaztion&Registation */ = {
+			isa = PBXGroup;
+			children = (
+				61D2CE6D2B2A3B3800559361 /* RegistrationPageViewController.swift */,
+				613DE6902B2CBF6300872B3D /* AutorizationPageViewController.swift */,
+				617427462B189F2A00379702 /* InformationInputController.swift */,
+			);
+			path = "Autoriaztion&Registation";
+			sourceTree = "<group>";
+		};
+		61E76F052B2E09A500FD399D /* Autorization&Registration */ = {
+			isa = PBXGroup;
+			children = (
+				613DE6922B2CC05900872B3D /* AutorizationView.swift */,
+				61D2CE6F2B2A3B5B00559361 /* RegistrationPageView.swift */,
+				617427402B189E1D00379702 /* InformationInputView.swift */,
+			);
+			path = "Autorization&Registration";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
