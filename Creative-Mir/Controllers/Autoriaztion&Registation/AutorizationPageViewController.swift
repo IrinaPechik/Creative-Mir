@@ -28,6 +28,7 @@ class AutorizationPageViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Отображение элементов интерфейса
     private func configureUI() {
         view.addSubview(autorizationView)
         autorizationView.pinHorizontal(to: view)
@@ -39,17 +40,22 @@ class AutorizationPageViewController: UIViewController {
         autorizationView.enterButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToMainPage)))
     }
     
+    // MARK: - Обработка нажатий на элементы интерфейса
+    
+    /// Убрать клавиатуру
     @objc func tapGesture() {
         [autorizationView.emailTextField, autorizationView.passwordTextField].forEach {
             $0.resignFirstResponder()
         }
     }
     
+    /// Переход на страницу регистрации
     @objc func registerButtonTapped() {
         let vc = RegistrationPageViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    /// Переход на главную страницу
     @objc func goToMainPage() {
         if (!checkFields(fields: [autorizationView.emailTextField, autorizationView.passwordTextField])) {
             autorizationView.errorLabel.text = "Введите все данные"
@@ -61,7 +67,9 @@ class AutorizationPageViewController: UIViewController {
                 if (autorizationView.passwordTextField.text == profile.password) {
                     autorizationView.passwordTextField.layer.borderWidth = 0
                     autorizationView.errorLabel.text = ""
-                    let vc = MainPageViewController()
+                    
+                    // Переход на главную страницу
+                    let vc = MainPageViewController(email: autorizationView.emailTextField.text!)
                     self.navigationController?.pushViewController(vc, animated: true)
                 } else {
                     autorizationView.errorLabel.text = "Неверный пароль"

@@ -78,7 +78,7 @@ class InformationInputController: UIViewController {
             // HASH PASSWORD LATER!!!
             CoreDataManager.shared.createProfile(firstName: informationInputView.firstNameField.text ?? "Имя", secondName: informationInputView.secondNameField.text ?? "Фамилия", avatar: informationInputView.avatarImage.image?.toPngString(), email: email, password: password, age: Int64(informationInputView.ageField.text!)!, cityName: informationInputView.cityNameField.text ?? "Город")
             
-            let vc = MainPageViewController()
+            let vc = MainPageViewController(email: email)
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

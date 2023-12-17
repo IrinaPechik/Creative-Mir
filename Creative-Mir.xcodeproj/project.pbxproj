@@ -28,6 +28,9 @@
 		61D2CE6E2B2A3B3800559361 /* RegistrationPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D2CE6D2B2A3B3800559361 /* RegistrationPageViewController.swift */; };
 		61D2CE702B2A3B5B00559361 /* RegistrationPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61D2CE6F2B2A3B5B00559361 /* RegistrationPageView.swift */; };
 		61E76F072B2E0A2100FD399D /* MainPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E76F062B2E0A2100FD399D /* MainPageView.swift */; };
+		61E76F092B2E110200FD399D /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E76F082B2E110200FD399D /* HomeController.swift */; };
+		61E76F0B2B2E2F8D00FD399D /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E76F0A2B2E2F8D00FD399D /* ProfileController.swift */; };
+		61E76F0D2B2E305100FD399D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E76F0C2B2E305100FD399D /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		61D2CE6D2B2A3B3800559361 /* RegistrationPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPageViewController.swift; sourceTree = "<group>"; };
 		61D2CE6F2B2A3B5B00559361 /* RegistrationPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationPageView.swift; sourceTree = "<group>"; };
 		61E76F062B2E0A2100FD399D /* MainPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageView.swift; sourceTree = "<group>"; };
+		61E76F082B2E110200FD399D /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		61E76F0A2B2E2F8D00FD399D /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		61E76F0C2B2E305100FD399D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		611DD9F62B2EFE7400569E83 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				611DD9F82B2EFFCC00569E83 /* NavigationBar */,
+				617544902B286E8200203E7C /* MainPageViewController.swift */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		611DD9F72B2EFE9A00569E83 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				61E76F0C2B2E305100FD399D /* ProfileView.swift */,
+				61E76F062B2E0A2100FD399D /* MainPageView.swift */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		611DD9F82B2EFFCC00569E83 /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				61E76F082B2E110200FD399D /* HomeController.swift */,
+				61E76F0A2B2E2F8D00FD399D /* ProfileController.swift */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
 		61203F142B23736600CC6241 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				61E76F052B2E09A500FD399D /* Autorization&Registration */,
-				61E76F062B2E0A2100FD399D /* MainPageView.swift */,
+				611DD9F72B2EFE9A00569E83 /* MainPage */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -132,8 +165,8 @@
 			isa = PBXGroup;
 			children = (
 				61E76F042B2E097700FD399D /* Autoriaztion&Registation */,
+				611DD9F62B2EFE7400569E83 /* MainPage */,
 				6174274B2B18B76700379702 /* ImagePickerManager.swift */,
-				617544902B286E8200203E7C /* MainPageViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -242,6 +275,7 @@
 				617427472B189F2A00379702 /* InformationInputController.swift in Sources */,
 				61D2CE6C2B2A3A5F00559361 /* ProfileViewFunctions.swift in Sources */,
 				61203F0B2B2337DC00CC6241 /* CoreData.xcdatamodeld in Sources */,
+				61E76F092B2E110200FD399D /* HomeController.swift in Sources */,
 				617427442B189E5200379702 /* ProfileModel.swift in Sources */,
 				617427412B189E1D00379702 /* InformationInputView.swift in Sources */,
 				613DE6932B2CC05900872B3D /* AutorizationView.swift in Sources */,
@@ -251,11 +285,13 @@
 				61203F132B23409200CC6241 /* CoreDataManager.swift in Sources */,
 				61D2CE6E2B2A3B3800559361 /* RegistrationPageViewController.swift in Sources */,
 				6174272C2B188B6900379702 /* AppDelegate.swift in Sources */,
+				61E76F0B2B2E2F8D00FD399D /* ProfileController.swift in Sources */,
 				6174272E2B188B6900379702 /* SceneDelegate.swift in Sources */,
 				613DE6912B2CBF6300872B3D /* AutorizationPageViewController.swift in Sources */,
 				61203F0D2B233B3E00CC6241 /* UIImage+String.swift in Sources */,
 				61E76F072B2E0A2100FD399D /* MainPageView.swift in Sources */,
 				61203F112B233DFA00CC6241 /* Profile+CoreDataProperties.swift in Sources */,
+				61E76F0D2B2E305100FD399D /* ProfileView.swift in Sources */,
 				6174274C2B18B76700379702 /* ImagePickerManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
