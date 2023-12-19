@@ -15,7 +15,6 @@ class ProfileController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-//        self.navigationItem.hidesBackButton = true
         configureUI()
     }
     

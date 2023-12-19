@@ -62,7 +62,7 @@ class AutorizationPageViewController: UIViewController {
             if let profile = CoreDataManager.shared.fetchProfile(with: autorizationView.emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)) {
                 autorizationView.passwordTextField.layer.borderColor = UIColor.black.cgColor
 //                autorizationView.emailTextField.layer.borderWidth = 0
-                if (autorizationView.passwordTextField.text == profile.password) {
+                if (hashPassword(password: autorizationView.passwordTextField.text!) == profile.password) {
                     autorizationView.passwordTextField.layer.borderColor = UIColor.black.cgColor
 //                    autorizationView.passwordTextField.layer.borderWidth = 0
                     autorizationView.errorLabel.text = ""
