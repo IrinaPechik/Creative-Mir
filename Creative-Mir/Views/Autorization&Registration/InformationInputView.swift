@@ -46,7 +46,7 @@ class InformationInputView: UIView, UITextFieldDelegate {
         super.init(frame: frame)
         fields.append(firstNameField)
         fields.append(secondNameField)
-        self.backgroundColor = .gray
+        self.backgroundColor = .systemBackground
         configureUI()
     }
     
@@ -161,7 +161,9 @@ class InformationInputView: UIView, UITextFieldDelegate {
     
     private func configureField(_ field: UITextField) {
         scrollView.addSubview(field)
-        field.backgroundColor = .lightGray
+        field.backgroundColor = .systemBackground
+        field.layer.borderWidth = 1
+        field.layer.borderColor = UIColor.black.cgColor
         field.layer.cornerRadius = Constants.fieldsCornerRadius
         
         let leftPaddingView = UIView(frame: CGRect(x: 0, y: 0, width: 8, height: field.frame.height))

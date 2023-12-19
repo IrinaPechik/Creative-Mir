@@ -20,9 +20,10 @@ func checkFields(fields: [UITextField]) -> Bool {
     var isValidData = true
     for field in fields {
         if field.text != nil && !field.text!.isEmpty {
-            field.layer.borderWidth = 0
+            field.layer.borderColor = UIColor.black.cgColor
+//            field.layer.borderWidth = 0
         } else {
-            field.layer.borderWidth = 1
+//            field.layer.borderWidth = 1
             field.layer.borderColor = UIColor.red.cgColor
             isValidData = false
         }
@@ -46,11 +47,11 @@ func checkAge(fieldAge: UITextField) -> Bool {
 func checkEmail(email: UITextField) -> Bool {
     if let emailText = email.text {
         if (!isValidEmail(emailText)) {
-            email.layer.borderWidth = 1
+//            email.layer.borderWidth = 1
             email.layer.borderColor = UIColor.red.cgColor
             return false
         } else {
-            email.layer.borderWidth = 0
+            email.layer.borderColor = UIColor.black.cgColor
             return true
         }
     } else {
@@ -67,11 +68,12 @@ func isValidPassword(password: String) -> Bool {
 func checkPassword(password: UITextField) -> Bool {
     if let passwordText = password.text {
         if (!isValidPassword(password: passwordText)) {
-            password.layer.borderWidth = 1
+//            password.layer.borderWidth = 1
             password.layer.borderColor = UIColor.red.cgColor
             return false
         } else {
-            password.layer.borderWidth = 0
+            password.layer.borderColor = UIColor.black.cgColor
+//            password.layer.borderWidth = 0
             return true
         }
     } else {

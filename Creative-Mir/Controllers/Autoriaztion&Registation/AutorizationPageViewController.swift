@@ -10,14 +10,12 @@ import UIKit
 
 class AutorizationPageViewController: UIViewController {
     let autorizationView = AutorizationView()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.tapGesture))
         view.addGestureRecognizer(tapGesture)
         configureUI()
-        
     }
     
     init() {
@@ -39,7 +37,6 @@ class AutorizationPageViewController: UIViewController {
         
         autorizationView.enterButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(goToMainPage)))
     }
-    
     // MARK: - Обработка нажатий на элементы интерфейса
     
     /// Убрать клавиатуру
@@ -62,10 +59,12 @@ class AutorizationPageViewController: UIViewController {
             autorizationView.passwordTextField.layer.borderWidth = 1
             autorizationView.passwordTextField.layer.borderColor = UIColor.red.cgColor
         } else {
-            if let profile = CoreDataManager.shared.fetchProfile(with: autorizationView.emailTextField.text!) {
-                autorizationView.emailTextField.layer.borderWidth = 0
+            if let profile = CoreDataManager.shared.fetchProfile(with: autorizationView.emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)) {
+                autorizationView.passwordTextField.layer.borderColor = UIColor.black.cgColor
+//                autorizationView.emailTextField.layer.borderWidth = 0
                 if (autorizationView.passwordTextField.text == profile.password) {
-                    autorizationView.passwordTextField.layer.borderWidth = 0
+                    autorizationView.passwordTextField.layer.borderColor = UIColor.black.cgColor
+//                    autorizationView.passwordTextField.layer.borderWidth = 0
                     autorizationView.errorLabel.text = ""
                     
                     // Переход на главную страницу

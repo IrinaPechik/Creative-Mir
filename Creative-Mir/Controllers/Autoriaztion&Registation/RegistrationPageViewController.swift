@@ -48,7 +48,7 @@ class RegistrationPageViewController: UIViewController {
         }
         if isPasswordValid && isEmailValid {
             registrationPageView.errorLabel.text = ""
-            let vc = InformationInputController(email: registrationPageView.emailTextField.text!, password: registrationPageView.passwordTextField.text!)
+            let vc = InformationInputController(email: registrationPageView.emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines), password: registrationPageView.passwordTextField.text!)
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }

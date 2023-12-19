@@ -22,7 +22,7 @@ class RegistrationPageView: UIView, UITextFieldDelegate {
     var errorLabel = UILabel()
     
     var fields: [UITextField] = []
-
+    let imageView = UIImageView(image: UIImage(named: "logo1"))
     // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,9 +37,16 @@ class RegistrationPageView: UIView, UITextFieldDelegate {
     
     // MARK: - Private methods
     private func configureUI() {
+        configureImage()
         configureTextFields()
         configureLabel()
         configureSaveButton()
+    }
+    private func configureImage() {
+        self.addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.pinTop(to: self.safeAreaLayoutGuide.topAnchor, 10)
+        imageView.pinCenterX(to: self.centerXAnchor)
     }
     
     private func configureTextFields() {
@@ -60,7 +67,9 @@ class RegistrationPageView: UIView, UITextFieldDelegate {
     
     private func configureField(_ field: UITextField) {
         self.addSubview(field)
-        field.backgroundColor = .lightGray
+        field.backgroundColor = .systemBackground
+        field.layer.borderWidth = 1
+        field.layer.borderColor = UIColor.black.cgColor
         field.layer.cornerRadius = Constants.fieldsCornerRadius
 
         field.pinHorizontal(to: self, Constants.fieldsHorizontalAnchor)

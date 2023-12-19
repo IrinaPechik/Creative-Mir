@@ -76,7 +76,7 @@ class InformationInputController: UIViewController {
         } else if isFieldsValid {
             informationInputView.errorLabel.text = ""
             // HASH PASSWORD LATER!!!
-            CoreDataManager.shared.createProfile(firstName: informationInputView.firstNameField.text ?? "Имя", secondName: informationInputView.secondNameField.text ?? "Фамилия", avatar: informationInputView.avatarImage.image?.toPngString(), email: email, password: password, age: Int64(informationInputView.ageField.text!)!, cityName: informationInputView.cityNameField.text ?? "Город")
+            CoreDataManager.shared.createProfile(firstName: informationInputView.firstNameField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "Имя", secondName: informationInputView.secondNameField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "Фамилия", avatar: informationInputView.avatarImage.image?.toPngString(), email: email, password: password, age: Int64(informationInputView.ageField.text!.trimmingCharacters(in: .whitespacesAndNewlines))!, cityName: informationInputView.cityNameField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "Город")
             
             let vc = MainPageViewController(email: email)
             self.navigationController?.pushViewController(vc, animated: true)

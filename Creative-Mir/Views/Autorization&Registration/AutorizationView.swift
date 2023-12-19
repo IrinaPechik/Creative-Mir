@@ -22,6 +22,7 @@ class AutorizationView: UIView, UITextFieldDelegate {
     let enterButton = UIButton()
     let registerButton = UIButton()
     var errorLabel = UILabel()
+    let imageView = UIImageView(image: UIImage(named: "logo1"))
     // MARK: - Initialization
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,6 +39,14 @@ class AutorizationView: UIView, UITextFieldDelegate {
         configureErrorLabel()
         configureRegisterButton()
         configureSaveButton()
+        configureImage()
+    }
+    
+    private func configureImage() {
+        self.addSubview(imageView)
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.pinTop(to: self.safeAreaLayoutGuide.topAnchor, 10)
+        imageView.pinCenterX(to: self.centerXAnchor)
     }
     
     private func configureErrorLabel() {
@@ -54,7 +63,7 @@ class AutorizationView: UIView, UITextFieldDelegate {
         registerButton.titleLabel?.numberOfLines = 0
         registerButton.setTitleColor(UIColor.black, for: .normal)
         registerButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
-        registerButton.pinTop(to: errorLabel.bottomAnchor, 20)
+        registerButton.pinTop(to: errorLabel.bottomAnchor, 15)
         registerButton.pinRight(to: self, 25)
     }
     
@@ -76,7 +85,9 @@ class AutorizationView: UIView, UITextFieldDelegate {
     
     private func configureField(_ field: UITextField) {
         self.addSubview(field)
-        field.backgroundColor = .lightGray
+        field.backgroundColor = .systemBackground
+        field.layer.borderColor = UIColor.black.cgColor
+        field.layer.borderWidth = 1
         field.layer.cornerRadius = Constants.fieldsCornerRadius
 
         field.pinHorizontal(to: self, Constants.fieldsHorizontalAnchor)
@@ -89,7 +100,9 @@ class AutorizationView: UIView, UITextFieldDelegate {
     
     private func configureSaveButton() {
         self.addSubview(enterButton)
-        enterButton.backgroundColor = .lightGray
+        enterButton.backgroundColor = .systemBackground
+        enterButton.layer.borderColor = UIColor.black.cgColor
+        enterButton.layer.borderWidth = 1
         
         enterButton.pinHorizontal(to: self, Constants.fieldsHorizontalAnchor)
         enterButton.setHeight(Constants.fieldsHeightAnchor)
@@ -98,6 +111,7 @@ class AutorizationView: UIView, UITextFieldDelegate {
         enterButton.layer.cornerRadius = Constants.fieldsCornerRadius
         
         enterButton.setTitle("Войти", for: .normal)
+        enterButton.setTitleColor(.black, for: .normal)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

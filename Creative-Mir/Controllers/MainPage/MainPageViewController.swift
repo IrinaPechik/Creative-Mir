@@ -34,13 +34,12 @@ class MainPageViewController : UITabBarController {
     /// Отображение navigation bar.
     private func setupFunc() {
         let home = self.createNav(with: "Главная", and: UIImage(systemName: "house"), vc: HomeController())
-        
         let profile = self.createNav(with: "Мой профиль", and: UIImage(systemName: "person.crop.circle.fill"), vc: profileController)
-        profile.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: nil, action: nil)
-        
-        let selected = self.createNav(with: "Избранное", and: UIImage(systemName: "suit.heart.fill"), vc: HomeController())
+//        profile.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "square.and.pencil"), style: .plain, target: nil, action: nil)
+//        
+//        let selected = self.createNav(with: "Избранное", and: UIImage(systemName: "suit.heart.fill"), vc: HomeController())
 
-        self.setViewControllers([home, selected, profile], animated: true)
+        self.setViewControllers([home, profile], animated: true)
     }
     
     /// Создание navigation bar.
@@ -52,6 +51,7 @@ class MainPageViewController : UITabBarController {
         // Title and image для одного текущего нижнего tabBar.
         nav.tabBarItem.title = title
         nav.tabBarItem.image = image
+        tabBar.tintColor = .label
         
         nav.viewControllers.first?.navigationItem.title = title
         return nav

@@ -10,8 +10,6 @@ import UIKit
 
 class MainPageView: UIView {
     
-    // MARK: - Fields
-    
     // MARK: - Initialization
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,5 +19,4 @@ class MainPageView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Private methods
 }

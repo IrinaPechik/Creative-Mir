@@ -62,20 +62,23 @@ public final class CoreDataManager: NSObject {
             return profiles?.first
         }
     }
-//
-//    public func updateProfile(with id: Int64, firstName: String?, secondName: String?, avatar: String?) {
-//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Profile")
-//        fetchRequest.predicate = NSPredicate(format: "id == %@", id)
-//        do {
-//            guard let profiles = try? context.fetch(fetchRequest) as? [Profile],
-//                  let profile = profiles.first else {return}
-//            profile.firstName = firstName
-//            profile.secondName = secondName
-//            profile.avatarImage = avatar
-//        }
-//        
-//        appDelegate.saveContext()
-//    }
+
+    public func updateProfile(firstName: String?, secondName: String?, avatar: String?, age: Int64, email: String?, cityName: String?) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Profile")
+        fetchRequest.predicate = NSPredicate(format: "email == %@", email!)
+        do {
+            guard let profiles = try? context.fetch(fetchRequest) as? [Profile],
+                  let profile = profiles.first else {return}
+            profile.firstName = firstName
+            profile.secondName = secondName
+            profile.avatarImage = avatar
+            profile.email = email
+            profile.age = age
+            profile.cityName = cityName
+        }
+        
+        appDelegate.saveContext()
+    }
 //    
 //    public func deleteProfile(with id: Int64) {
 //        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Profile")
@@ -88,4 +91,26 @@ public final class CoreDataManager: NSObject {
 //        }
 //        appDelegate.saveContext()
 //    }
+    
+    public func createSuppliers(firstName: String, secondName: String, position: String, experience: Int64, avatarImage: String, email: String) {
+        guard let supplierDescription = NSEntityDescription.entity(forEntityName: "Supplier", in: context) else {
+            return
+        }
+        let supplier = Supplier(entity: supplierDescription, insertInto: context)
+        
+        supplier.firstName = firstName
+        supplier.secondName = secondName
+        supplier.position = position
+        supplier.experience = experience
+        supplier.email = email
+        supplier.avatarImage = avatarImage
+        appDelegate.saveContext()
+    }
+    
+    public func fetchSuppliers() -> [Supplier] {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Supplier")
+        do {
+            return (try? context.fetch(fetchRequest) as? [Supplier]) ?? []
+        }
+    }
 }
