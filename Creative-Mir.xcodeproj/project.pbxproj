@@ -142,7 +142,7 @@
 				61FCBB162B31766200421FFF /* Fonts */,
 				61203F142B23736600CC6241 /* CoreData */,
 				617427482B18A38800379702 /* Functions */,
-				617427452B189F0300379702 /* Controllers */,
+				617427452B189F0300379702 /* ViewModels */,
 				617427422B189E3800379702 /* Models */,
 				6174273F2B189DAB00379702 /* Views */,
 				6174272B2B188B6900379702 /* AppDelegate.swift */,
@@ -173,14 +173,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		617427452B189F0300379702 /* Controllers */ = {
+		617427452B189F0300379702 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				61E76F042B2E097700FD399D /* Autoriaztion&Registation */,
 				611DD9F62B2EFE7400569E83 /* MainPage */,
 				6174274B2B18B76700379702 /* ImagePickerManager.swift */,
 			);
-			path = Controllers;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		617427482B18A38800379702 /* Functions */ = {
